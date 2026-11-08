@@ -255,7 +255,7 @@ function Topbar({ onMenu, onSearch }) {
       </Popover>
 
       <Popover open={pop === 'user'} onClose={close} anchor={refs.user} width={240}>
-        <div className="pop-head"><strong>{ADMIN.name}</strong><span>erick@{ADMIN.store.toLowerCase()}.com.br</span></div>
+        <div className="pop-head"><strong>{ADMIN.name}</strong><span>marina@{ADMIN.store.toLowerCase()}.com.br</span></div>
         <div className="menu-list">
           <button onClick={() => { go('configuracoes'); close(); }}><Icon name="settings" size={15} />Configurações</button>
           <button onClick={() => { go('funcoes'); close(); }}><Icon name="shield" size={15} />Funções e acesso</button>

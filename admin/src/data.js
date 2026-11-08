@@ -276,7 +276,7 @@ export const CUSTOMERS = Array.from({ length: 64 }, (_, i) => {
 }).sort((a, b) => b.ltv - a.ltv);
 
 export const TEAM = [
-  ['Erick Umbelino', 'Proprietário', 'Diretoria', 'online'],
+  ['Marina Costa', 'Proprietário', 'Diretoria', 'online'],
   ['Larissa Moreira', 'Gerente de e-commerce', 'Operações', 'online'],
   ['Thiago Barbosa', 'Analista de catálogo', 'Catálogo', 'online'],
   ['Camila Rocha', 'Atendimento', 'Atendimento', 'away'],
@@ -412,12 +412,12 @@ export const ACTIVITY = [
   ['Beatriz Almeida', 'recusou o anúncio', 'Sofá Retrátil Reclinável 4 Lugares', 'sem nota fiscal', 'moderation', 75],
   ['Juliana Lopes', 'pagou o repasse', 'RP-2614', 'Casa Prime · R$ 61.420,18', 'finance', 120],
   ['Camila Rocha', 'aprovou reembolso do pedido', '#481022', 'Pix · R$ 749,00', 'refund', 160],
-  ['Erick Umbelino', 'convidou', 'Henrique Costa', 'como Analista de dados', 'team', 300],
+  ['Marina Costa', 'convidou', 'Henrique Costa', 'como Analista de dados', 'team', 300],
   ['Sistema', 'sincronizou estoque com o ERP', '3.482 SKUs', 'em 41 s', 'system', 360],
   ['Rafael Gomes', 'criou o cupom', 'BLACK10', '10% em Hardware, até 30/11', 'price', 520],
   ['Diego Carvalho', 'gerou etiquetas de envio', '214 pedidos', 'transportadora e Correios', 'order', 700],
   ['Gustavo Dias', 'publicou a versão', 'checkout 4.12.0', 'tempo de carregamento −180 ms', 'system', 1440],
-  ['Erick Umbelino', 'alterou permissões de', 'Catálogo', '+ moderar anúncios', 'team', 2000],
+  ['Marina Costa', 'alterou permissões de', 'Catálogo', '+ moderar anúncios', 'team', 2000],
 ].map(([who, action, target, detail, kind, mins], i) => ({ id: 'ev' + i, who, action, target, detail, kind, mins }));
 
 // ---------- Integrações ----------
@@ -459,4 +459,4 @@ export const REGIONS = [
   ['SP', 0.34], ['RJ', 0.12], ['MG', 0.11], ['PR', 0.07], ['RS', 0.065], ['SC', 0.05], ['BA', 0.05], ['DF', 0.035], ['PE', 0.03], ['GO', 0.03], ['CE', 0.025], ['Outros', 0.075],
 ].map(([uf, share]) => ({ uf, share }));
 
-export const ADMIN = { name: 'Erick Umbelino', first: 'Erick', role: 'Proprietário', store: 'Vitrine' };
+export const ADMIN = { name: 'Marina Costa', first: 'Marina', role: 'Proprietário', store: 'Vitrine' };

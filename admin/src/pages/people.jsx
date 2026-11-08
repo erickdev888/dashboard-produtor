@@ -18,7 +18,7 @@ export function Tasks() {
   const add = (e) => {
     e.preventDefault();
     if (!title.trim()) return;
-    setTasks((l) => [{ id: 'k' + Date.now(), title: title.trim(), who: 'Erick Umbelino', priority: prio, due: 'Hoje', done: false, tag: 'Geral' }, ...l]);
+    setTasks((l) => [{ id: 'k' + Date.now(), title: title.trim(), who: 'Marina Costa', priority: prio, due: 'Hoje', done: false, tag: 'Geral' }, ...l]);
     setTitle('');
     toast('Tarefa criada', { icon: 'tasks' });
   };
