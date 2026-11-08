@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Habitat — Imóveis</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..800&display=swap" rel="stylesheet">
+<style>
+:root{--f:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter Display",Inter,system-ui,sans-serif;--acc:#1f4d3a}
+*{box-sizing:border-box;margin:0}a{color:inherit;text-decoration:none}
+body{font-family:var(--f);background:#fbfaf7;color:#141414;-webkit-font-smoothing:antialiased;letter-spacing:-.01em}
+nav{display:flex;align-items:center;gap:30px;height:78px;padding:0 48px}
+.logo{font-weight:800;font-size:22px;letter-spacing:-.04em;display:flex;gap:8px;align-items:center}.logo i{width:22px;height:22px;border-radius:6px;background:var(--acc);display:block}
+nav ul{display:flex;gap:26px;list-style:none;padding:0;color:#6b6b6b;font-size:14.5px}
+nav .b{margin-left:auto}
+.btn{display:inline-flex;align-items:center;gap:8px;height:46px;padding:0 22px;border-radius:99px;font-weight:650;font-size:14.5px;border:0;font-family:inherit;cursor:pointer}
+.dk{background:#141414;color:#fff}
+.hero{position:relative;margin:0 24px;border-radius:36px;height:620px;overflow:hidden;background:linear-gradient(180deg,#cfe0d6 0%,#e9e2d3 60%,#d8c9ad 100%)}
+.hero svg.scene{position:absolute;right:0;bottom:0;width:72%;height:auto}
+.hero .txt{position:absolute;left:56px;top:70px;max-width:560px;animation:up 1s cubic-bezier(.16,1,.3,1) both}
+.hero h1{font-size:76px;line-height:.95;letter-spacing:-.055em}
+.hero p{font-size:18px;color:#3c3c3c;margin-top:18px;max-width:440px;line-height:1.5}
+.search{position:absolute;left:56px;bottom:56px;right:56px;max-width:900px;background:#fff;border-radius:24px;padding:12px;display:grid;grid-template-columns:1.4fr 1fr 1fr auto;gap:10px;box-shadow:0 30px 60px -30px rgba(0,0,0,.35);animation:up 1s .2s cubic-bezier(.16,1,.3,1) both}
+.search div{padding:10px 16px;border-radius:16px;background:#f5f3ee}.search small{display:block;font-size:12px;color:#7a7a7a}.search b{font-size:15px}
+.search .btn{height:auto;border-radius:16px;padding:0 30px;background:var(--acc);color:#fff}
+@keyframes up{from{opacity:0;transform:translateY(30px)}}
+section{padding:80px 48px}
+.head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:34px}
+h2{font-size:46px;letter-spacing:-.05em;line-height:1}
+.tabs{display:flex;gap:8px}.tabs span{padding:10px 16px;border-radius:99px;border:1px solid #e3dfd6;font-size:14px}.tabs .on{background:#141414;color:#fff;border-color:#141414}
+.list{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{border-radius:28px;background:#fff;overflow:hidden;box-shadow:0 20px 40px -32px rgba(0,0,0,.4);transition:transform .4s cubic-bezier(.16,1,.3,1)}
+.card:hover{transform:translateY(-6px)}
+.ph{height:230px;position:relative;overflow:hidden}
+.ph .badge{position:absolute;left:14px;top:14px;background:rgba(255,255,255,.92);border-radius:99px;padding:6px 12px;font-size:12px;font-weight:600}
+.ph .fav{position:absolute;right:14px;top:14px;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center}
+.info{padding:20px 22px 22px}.info b{font-size:24px;letter-spacing:-.03em}.info p{color:#6b6b6b;font-size:14px;margin:4px 0 14px}
+.specs{display:flex;gap:16px;font-size:13.5px;color:#3c3c3c;border-top:1px solid #efece6;padding-top:14px}
+@media(max-width:860px){.list{grid-template-columns:1fr}.search{grid-template-columns:1fr}.hero h1{font-size:46px}.hero .txt{left:24px;right:24px}.search{left:16px;right:16px}nav ul{display:none}section,nav{padding-left:20px;padding-right:20px}}
+</style></head><body>
+<nav><div class="logo"><i></i>habitat</div><ul><li>Comprar</li><li>Alugar</li><li>Lançamentos</li><li>Anunciar</li></ul><a class="btn dk b" href="#">Falar com corretor</a></nav>
+<div class="hero">
+ <svg class="scene" viewBox="0 0 900 520" aria-hidden="true"><defs><linearGradient id="w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fffdf8"/><stop offset="1" stop-color="#ebe4d5"/></linearGradient></defs>
+  <circle cx="720" cy="120" r="70" fill="#fff6dc" opacity=".8"/>
+  <path d="M120 520V300l210-150 210 150v220z" fill="url(#w)"/><path d="M100 310 330 140l230 170" fill="none" stroke="#1f4d3a" stroke-width="18" stroke-linejoin="round"/>
+  <rect x="190" y="340" width="90" height="90" rx="8" fill="#b9d3c6"/><rect x="380" y="340" width="90" height="90" rx="8" fill="#b9d3c6"/><rect x="290" y="420" width="80" height="100" rx="6" fill="#1f4d3a"/>
+  <path d="M560 520V360l130-90 130 90v160z" fill="#f5efe3"/><rect x="620" y="390" width="60" height="60" rx="6" fill="#b9d3c6"/><rect x="720" y="390" width="60" height="60" rx="6" fill="#b9d3c6"/>
+  <ellipse cx="80" cy="470" rx="60" ry="80" fill="#2f6b52"/><ellipse cx="860" cy="470" rx="50" ry="70" fill="#2f6b52"/><rect x="0" y="505" width="900" height="15" fill="#c9b892"/></svg>
+ <div class="txt"><h1>Encontre o lugar que é a sua cara.</h1><p>Mais de 2 mil imóveis com tour virtual, simulação de financiamento e visita agendada pelo WhatsApp.</p></div>
+ <div class="search"><div><small>Localização</small><b>Pinheiros, São Paulo</b></div><div><small>Tipo</small><b>Apartamento</b></div><div><small>Até</small><b>R$ 1,2 mi</b></div><a class="btn" href="#">Buscar</a></div>
+</div>
+<section><div class="head"><h2>Destaques da semana</h2><div class="tabs"><span class="on">Comprar</span><span>Alugar</span></div></div>
+<div class="list">
+ <div class="card"><div class="ph" style="background:linear-gradient(160deg,#dbe7e0,#a9c6b6)"><svg viewBox="0 0 400 230" style="position:absolute;inset:0;width:100%;height:100%"><rect x="70" y="60" width="260" height="170" fill="#fffdf8"/><g fill="#a9c6b6"><rect x="95" y="85" width="50" height="40"/><rect x="175" y="85" width="50" height="40"/><rect x="255" y="85" width="50" height="40"/><rect x="95" y="145" width="50" height="40"/><rect x="255" y="145" width="50" height="40"/></g><rect x="175" y="150" width="50" height="80" fill="#1f4d3a"/></svg><span class="badge">Tour virtual</span><span class="fav">♡</span></div><div class="info"><b>R$ 890.000</b><p>Rua dos Pinheiros · 2 quartos · 1 vaga</p><div class="specs"><span>78 m²</span><span>2 quartos</span><span>Varanda</span></div></div></div>
+ <div class="card"><div class="ph" style="background:linear-gradient(160deg,#efe4d2,#d6c3a1)"><svg viewBox="0 0 400 230" style="position:absolute;inset:0;width:100%;height:100%"><path d="M60 230V120l140-80 140 80v110z" fill="#fffdf8"/><rect x="110" y="140" width="60" height="50" fill="#d6c3a1"/><rect x="230" y="140" width="60" height="50" fill="#d6c3a1"/><rect x="175" y="160" width="50" height="70" fill="#7a5c34"/></svg><span class="badge">Casa · Lançamento</span><span class="fav">♡</span></div><div class="info"><b>R$ 1.450.000</b><p>Alto de Pinheiros · 3 suítes · 3 vagas</p><div class="specs"><span>210 m²</span><span>Piscina</span><span>Quintal</span></div></div></div>
+ <div class="card"><div class="ph" style="background:linear-gradient(160deg,#d9e1ea,#9fb4c9)"><svg viewBox="0 0 400 230" style="position:absolute;inset:0;width:100%;height:100%"><rect x="140" y="20" width="120" height="210" fill="#fffdf8"/><g fill="#9fb4c9"><rect x="158" y="40" width="34" height="26"/><rect x="208" y="40" width="34" height="26"/><rect x="158" y="80" width="34" height="26"/><rect x="208" y="80" width="34" height="26"/><rect x="158" y="120" width="34" height="26"/><rect x="208" y="120" width="34" height="26"/><rect x="158" y="160" width="34" height="26"/><rect x="208" y="160" width="34" height="26"/></g></svg><span class="badge">Studio</span><span class="fav">♡</span></div><div class="info"><b>R$ 3.200/mês</b><p>Vila Madalena · mobiliado</p><div class="specs"><span>38 m²</span><span>Academia</span><span>Pet friendly</span></div></div></div>
+</div></section>
+<p style="text-align:center;color:#8a8a8a;font-size:13px;padding:0 0 50px">Habitat · Template por ricco.agency</p>
+</body></html>
