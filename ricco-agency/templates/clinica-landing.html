@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Clínica Aura — Odontologia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..800&display=swap" rel="stylesheet">
+<style>
+:root{--f:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter Display",Inter,system-ui,sans-serif;--ink:#111;--muted:#6b6b70;--acc:#0f766e}
+*{box-sizing:border-box;margin:0}
+a{color:inherit;text-decoration:none}
+body{font-family:var(--f);background:#f6f5f2;color:var(--ink);-webkit-font-smoothing:antialiased;letter-spacing:-.01em}
+.wrap{max-width:1160px;margin:0 auto;padding:0 28px}
+nav .wrap{display:flex;align-items:center;height:76px;gap:30px}
+.logo{font-weight:800;font-size:22px;letter-spacing:-.04em}.logo span{color:var(--acc)}
+nav ul{display:flex;gap:26px;list-style:none;padding:0;color:var(--muted);font-size:14.5px;margin-left:20px}
+.btn{display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 24px;border-radius:99px;font-weight:650;font-size:15px;border:0;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px)}
+.dark{background:#111;color:#fff}.wa{background:#25d366;color:#05230f;box-shadow:0 14px 30px -12px rgba(37,211,102,.7)}
+nav .btn{margin-left:auto;height:42px}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center;padding:50px 0 80px}
+.pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border-radius:99px;padding:8px 14px;font-size:13px;color:var(--muted);box-shadow:0 4px 20px -10px rgba(0,0,0,.2)}
+.pill i{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.2)}
+h1{font-size:74px;line-height:.98;letter-spacing:-.055em;font-weight:800;margin:22px 0}
+h1 em{font-style:normal;color:var(--acc)}
+.hero p{font-size:19px;color:var(--muted);line-height:1.55;max-width:500px;margin-bottom:30px}
+.stats{display:flex;gap:34px;margin-top:40px}
+.stats b{display:block;font-size:30px;letter-spacing:-.04em}.stats span{color:var(--muted);font-size:13px}
+.visual{position:relative;height:560px;border-radius:36px;overflow:hidden;background:linear-gradient(160deg,#d7ece8,#a8d5cd 50%,#6fb3a8)}
+.visual svg.tooth{position:absolute;left:50%;top:50%;width:300px;transform:translate(-50%,-55%);filter:drop-shadow(0 30px 40px rgba(0,60,50,.35));animation:float 6s ease-in-out infinite}
+@keyframes float{50%{transform:translate(-50%,-60%) rotate(-3deg)}}
+.card{position:absolute;background:rgba(255,255,255,.88);backdrop-filter:blur(10px);border-radius:20px;padding:16px 18px;box-shadow:0 20px 40px -20px rgba(0,0,0,.35);font-size:13px;animation:pop .9s cubic-bezier(.16,1,.3,1) both}
+.card b{display:block;font-size:15px;margin-bottom:2px}
+.c1{left:24px;bottom:30px;animation-delay:.4s}.c2{right:24px;top:30px;animation-delay:.6s}
+@keyframes pop{from{opacity:0;transform:translateY(20px) scale(.9)}}
+.slots{display:flex;gap:6px;margin-top:10px}.slots span{padding:6px 10px;border-radius:10px;background:#f1f1ef;font-weight:600}.slots .on{background:#111;color:#fff}
+section{padding:80px 0}
+h2{font-size:48px;letter-spacing:-.05em;line-height:1.02}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
+.s{background:#fff;border-radius:24px;padding:26px;transition:transform .3s,box-shadow .3s}
+.s:hover{transform:translateY(-6px);box-shadow:0 30px 50px -30px rgba(0,0,0,.35)}
+.s .ic{width:48px;height:48px;border-radius:14px;background:#e6f2ef;color:var(--acc);display:grid;place-items:center;font-size:22px;margin-bottom:40px}
+.s h3{font-size:19px;letter-spacing:-.03em}.s p{color:var(--muted);font-size:14px;margin-top:6px;line-height:1.5}
+.book{display:grid;grid-template-columns:1fr 1fr;gap:30px;background:#111;color:#fff;border-radius:36px;padding:56px}
+.book p{color:#a1a1a6;font-size:17px;margin:16px 0 28px;line-height:1.55}
+.form{background:#1c1c1e;border-radius:24px;padding:26px;display:grid;gap:12px}
+.form input,.form select{height:50px;border-radius:14px;border:1px solid #333;background:#111;color:#fff;padding:0 16px;font:inherit}
+footer{text-align:center;color:var(--muted);font-size:13px;padding:30px 0 50px}
+.reveal{opacity:0;transform:translateY(30px);transition:all .9s cubic-bezier(.16,1,.3,1)}.reveal.in{opacity:1;transform:none}
+.hero>div:first-child>*{animation:up 1s cubic-bezier(.16,1,.3,1) both}
+.hero>div:first-child>*:nth-child(2){animation-delay:.08s}.hero>div:first-child>*:nth-child(3){animation-delay:.16s}.hero>div:first-child>*:nth-child(4){animation-delay:.24s}.hero>div:first-child>*:nth-child(5){animation-delay:.32s}
+@keyframes up{from{opacity:0;transform:translateY(30px)}}
+@media(max-width:860px){.hero,.book{grid-template-columns:1fr}h1{font-size:46px}.grid{grid-template-columns:1fr 1fr}nav ul{display:none}.visual{height:380px}.book{padding:30px}}
+</style></head><body>
+<nav><div class="wrap"><div class="logo">aura<span>.</span></div><ul><li>Tratamentos</li><li>Equipe</li><li>Convênios</li><li>Contato</li></ul><a class="btn dark" href="#agendar">Agendar consulta</a></div></nav>
+<div class="wrap hero">
+  <div>
+    <span class="pill"><i></i> Horários disponíveis hoje</span>
+    <h1>Seu sorriso,<br>no seu <em>tempo.</em></h1>
+    <p>Agende em menos de 1 minuto pelo WhatsApp e receba lembrete automático da sua consulta.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn wa" href="#">◉ Agendar pelo WhatsApp</a><a class="btn" style="background:#fff" href="#">Ver tratamentos</a></div>
+    <div class="stats"><div><b>15 anos</b><span>de experiência</span></div><div><b>8</b><span>especialidades</span></div><div><b>Sáb.</b><span>atendimento até 14h</span></div></div>
+  </div>
+  <div class="visual">
+    <svg class="tooth" viewBox="0 0 100 110"><defs><linearGradient id="t" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#dfeeea"/></linearGradient></defs><path d="M50 14c-8-7-26-10-34 2s-2 34 4 50 6 36 14 38 8-24 16-24 8 26 16 24 10-22 14-38 12-38 4-50-26-9-34-2z" fill="url(#t)"/><path d="M30 26c6-4 14-4 20 0" stroke="#fff" stroke-width="5" stroke-linecap="round" fill="none" opacity=".9"/></svg>
+    <div class="card c1"><b>Próximos horários</b>Quinta, 14 de novembro<div class="slots"><span>09:00</span><span class="on">10:30</span><span>14:00</span><span>16:30</span></div></div>
+    <div class="card c2"><b>✓ Consulta confirmada</b>Lembrete enviado no WhatsApp</div>
+  </div>
+</div>
+<section class="wrap"><h2 class="reveal">Tratamentos completos<br>em um só lugar.</h2>
+<div class="grid">
+ <div class="s reveal"><div class="ic">✦</div><h3>Clareamento</h3><p>Resultados visíveis já na primeira sessão.</p></div>
+ <div class="s reveal"><div class="ic">◐</div><h3>Ortodontia</h3><p>Alinhadores invisíveis e aparelhos estéticos.</p></div>
+ <div class="s reveal"><div class="ic">◆</div><h3>Implantes</h3><p>Planejamento digital e cirurgia guiada.</p></div>
+ <div class="s reveal"><div class="ic">❋</div><h3>Prevenção</h3><p>Limpeza, check-up e acompanhamento.</p></div>
+</div></section>
+<section class="wrap" id="agendar"><div class="book reveal"><div><h2>Agende agora.<br>A gente confirma pra você.</h2><p>Escolha o dia, o horário e pronto. A confirmação e o lembrete chegam automaticamente no seu WhatsApp.</p><a class="btn wa" href="#">◉ Falar no WhatsApp</a></div>
+<div class="form"><input placeholder="Seu nome"><input placeholder="WhatsApp"><select><option>Avaliação inicial</option><option>Clareamento</option><option>Ortodontia</option></select><button class="btn" style="background:#fff;justify-content:center">Confirmar agendamento</button></div></div></section>
+<footer>Clínica Aura · Template por ricco.agency</footer>
+<script>const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('in')),{threshold:.15});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));</script>
+</body></html>

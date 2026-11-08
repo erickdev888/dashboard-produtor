@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Pulse — App</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..800&display=swap" rel="stylesheet">
+<style>
+:root{--f:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter Display",Inter,system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}
+body{font-family:var(--f);background:#000;color:#fff;-webkit-font-smoothing:antialiased;letter-spacing:-.015em;max-width:480px;margin:0 auto;padding:58px 18px 110px}
+.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}
+.me{display:flex;gap:10px;align-items:center}.me i{width:40px;height:40px;border-radius:50%;background:linear-gradient(145deg,#fff,#777);display:block}
+.me small{display:block;color:#8e8e93;font-size:13px}.me b{font-size:17px}
+.bell{width:40px;height:40px;border-radius:50%;background:#1c1c1e;display:grid;place-items:center}
+.card{position:relative;border-radius:28px;padding:22px;height:200px;background:linear-gradient(135deg,#2c2c2e,#0c0c0d);border:1px solid #2c2c2e;overflow:hidden;animation:up .9s cubic-bezier(.16,1,.3,1) both}
+.card::after{content:"";position:absolute;right:-60px;top:-80px;width:240px;height:240px;border-radius:50%;background:radial-gradient(closest-side,rgba(255,255,255,.22),transparent)}
+.card small{color:#8e8e93;font-size:13px}.card .v{font-size:42px;font-weight:800;letter-spacing:-.05em;margin:6px 0}
+.card .row{position:absolute;left:22px;right:22px;bottom:20px;display:flex;justify-content:space-between;font-size:13px;color:#aeaeb2}
+.card em{font-style:normal;color:#30d158}
+.acts{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0 24px}
+.a{display:flex;flex-direction:column;align-items:center;gap:8px;font-size:12px;color:#aeaeb2;animation:up .8s cubic-bezier(.16,1,.3,1) both}
+.a i{width:58px;height:58px;border-radius:20px;background:#1c1c1e;display:grid;place-items:center;font-style:normal;font-size:22px;color:#fff}
+.a:first-child i{background:#fff;color:#000}
+h3{font-size:20px;letter-spacing:-.03em;margin:4px 0 12px;display:flex;justify-content:space-between;align-items:baseline}h3 small{font-size:14px;color:#8e8e93;font-weight:500}
+.chart{border-radius:24px;background:#1c1c1e;padding:18px;margin-bottom:22px}
+.chart svg{width:100%;height:130px;display:block}
+.chart .line{stroke-dasharray:600;stroke-dashoffset:600;animation:draw 1.8s .3s cubic-bezier(.16,1,.3,1) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.seg{display:flex;gap:4px;background:#2c2c2e;border-radius:12px;padding:3px;margin-top:10px}.seg span{flex:1;text-align:center;padding:7px;border-radius:9px;font-size:13px;color:#aeaeb2}.seg .on{background:#fff;color:#000;font-weight:600}
+.tx{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid #1c1c1e;animation:up .7s cubic-bezier(.16,1,.3,1) both}
+.tx i{width:46px;height:46px;border-radius:15px;background:#1c1c1e;display:grid;place-items:center;font-style:normal;font-size:20px}
+.tx div{flex:1}.tx b{display:block;font-size:16px}.tx small{color:#8e8e93;font-size:13px}
+.tx .val{font-weight:700}.tx .in{color:#30d158}
+.tab{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);width:calc(100% - 36px);max-width:440px;height:68px;border-radius:26px;background:rgba(28,28,30,.85);backdrop-filter:blur(20px);display:flex;justify-content:space-around;align-items:center;border:1px solid #2c2c2e}
+.tab span{font-size:22px;opacity:.5}.tab .on{opacity:1}
+@keyframes up{from{opacity:0;transform:translateY(24px)}}
+</style></head><body>
+<div class="top"><div class="me"><i></i><div><small>Bom dia,</small><b>Marina</b></div></div><div class="bell">🔔</div></div>
+<div class="card"><small>Saldo disponível</small><div class="v">R$ 12.480,36</div><div style="font-size:13px;color:#aeaeb2">Rendendo 102% do CDI</div><div class="row"><span>•••• 4021</span><em>↗ +R$ 384 este mês</em></div></div>
+<div class="acts"><div class="a"><i>↗</i>Pix</div><div class="a" style="animation-delay:.05s"><i>⎘</i>Pagar</div><div class="a" style="animation-delay:.1s"><i>⇄</i>Transferir</div><div class="a" style="animation-delay:.15s"><i>◎</i>Investir</div></div>
+<h3>Gastos <small>Novembro</small></h3>
+<div class="chart"><svg viewBox="0 0 320 130" preserveAspectRatio="none"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".25"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>
+<path d="M0 100 C30 90 40 60 70 70 S120 40 150 55 200 20 230 35 280 10 320 18 V130 H0Z" fill="url(#g)"/>
+<path class="line" d="M0 100 C30 90 40 60 70 70 S120 40 150 55 200 20 230 35 280 10 320 18" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg>
+<div class="seg"><span>7D</span><span class="on">30D</span><span>3M</span><span>1A</span></div></div>
+<h3>Atividade <small>Ver tudo</small></h3>
+<div class="tx" style="animation-delay:.2s"><i>☕</i><div><b>Café Nômade</b><small>Hoje, 08:12</small></div><span class="val">− R$ 18,90</span></div>
+<div class="tx" style="animation-delay:.26s"><i>⇣</i><div><b>Pix recebido</b><small>Hoje, 07:40</small></div><span class="val in">+ R$ 1.250,00</span></div>
+<div class="tx" style="animation-delay:.32s"><i>🚗</i><div><b>Corrida</b><small>Ontem, 22:05</small></div><span class="val">− R$ 32,40</span></div>
+<div class="tx" style="animation-delay:.38s"><i>🛒</i><div><b>Mercado</b><small>Ontem, 18:30</small></div><span class="val">− R$ 214,77</span></div>
+<div class="tx" style="animation-delay:.44s"><i>♫</i><div><b>Assinatura de música</b><small>12 nov</small></div><span class="val">− R$ 21,90</span></div>
+<div class="tab"><span class="on">⌂</span><span>▦</span><span>◎</span><span>☰</span></div>
+</body></html>

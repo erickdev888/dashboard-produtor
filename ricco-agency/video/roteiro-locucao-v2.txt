@@ -1,0 +1,25 @@
+ROTEIRO DE LOCUÇÃO — Comercial ricco.agency (47 s)
+As legendas do vídeo são exatamente estas falas, palavra por palavra. Grave no mesmo ritmo,
+com energia de TikTok (rápido no começo, firme no final). No TTSMaker, cole cada trecho e ajuste a velocidade.
+
+00:00.00–00:03.70  "Sua empresa ainda perde HORAS fazendo à mão o que um sistema faz sozinho?"
+00:03.70–00:05.70  "A ricco.agency resolve isso."
+00:05.70–00:07.70  "Somos fullstack: do design ao servidor."
+00:07.70–00:11.70  "Tudo o que sua empresa precisa em um só lugar."
+00:11.70–00:15.70  "Landing pages que transformam visita em cliente."
+00:15.70–00:19.10  "Lojas virtuais com carrinho, Pix e frete automático."
+00:19.10–00:23.10  "Sistemas SaaS e painéis com seus números em tempo real."
+00:23.10–00:26.10  "Dashboards que mostram onde está o resultado."
+00:26.10–00:29.10  "Aplicativos que seu cliente usa todo dia."
+00:29.10–00:32.10  "Sites que passam confiança desde o primeiro clique."
+00:32.10–00:36.10  "Automações: WhatsApp, planilhas, ERP e IA trabalhando por você."
+00:36.10–00:39.70  "Manutenção e performance no código que você já tem."
+00:39.70–00:43.30  "Menos tarefa manual. [pausa] Mais tempo pro que importa."  (fale devagar, a música some aqui)
+00:43.30–00:47.00  "Chama no direct."
+
+LEGENDA DO POST
+Sua empresa ainda perde horas com tarefa manual? ⏱️
+A ricco.agency cria sistemas SaaS, landing pages, lojas virtuais, apps, dashboards e automações
+— e cuida do código que você já tem. Tudo em um só lugar, do design ao servidor.
+📩 Chama no direct e peça seu orçamento.
+#desenvolvimentoweb #fullstack #saas #landingpage #automacao #programacao #empreendedorismo #tecnologia

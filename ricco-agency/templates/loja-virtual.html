@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NÔMADE — Loja</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..800&display=swap" rel="stylesheet">
+<style>
+:root{--f:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter Display",Inter,system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}
+body{font-family:var(--f);background:#fff;color:#0a0a0a;-webkit-font-smoothing:antialiased;letter-spacing:-.01em}
+.bar{background:#0a0a0a;color:#fff;text-align:center;font-size:12.5px;padding:9px;letter-spacing:.02em}
+nav{display:flex;align-items:center;gap:30px;height:72px;padding:0 40px;border-bottom:1px solid #eee;position:sticky;top:0;background:rgba(255,255,255,.9);backdrop-filter:blur(14px);z-index:5}
+.logo{font-weight:900;font-size:24px;letter-spacing:.12em}
+nav ul{display:flex;gap:24px;list-style:none;padding:0;font-size:14px;color:#555}
+.icons{margin-left:auto;display:flex;gap:18px;align-items:center}
+.cart{position:relative;width:42px;height:42px;border-radius:50%;border:1px solid #e5e5e5;display:grid;place-items:center;cursor:pointer;background:#fff}
+.cart b{position:absolute;top:-4px;right:-4px;min-width:20px;height:20px;border-radius:99px;background:#0a0a0a;color:#fff;font-size:11px;display:grid;place-items:center;transition:transform .3s cubic-bezier(.34,1.8,.64,1)}
+.cart b.bump{transform:scale(1.5)}
+.search{height:42px;border-radius:99px;background:#f3f3f3;padding:0 18px;display:flex;align-items:center;color:#888;font-size:14px;width:260px}
+.hero{margin:20px 40px;border-radius:30px;height:440px;background:#0a0a0a;color:#fff;display:grid;grid-template-columns:1fr 1fr;overflow:hidden;position:relative}
+.hero .txt{padding:60px;display:flex;flex-direction:column;justify-content:center;gap:18px;animation:up 1s cubic-bezier(.16,1,.3,1) both}
+.hero small{letter-spacing:.2em;font-size:12px;opacity:.6}
+.hero h1{font-size:64px;line-height:.95;letter-spacing:-.05em}
+.hero .btn{align-self:flex-start}
+.btn{height:50px;padding:0 26px;border-radius:99px;border:0;font:inherit;font-weight:650;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.hero .btn{background:#fff;color:#000}
+.hero .art{position:relative;display:grid;place-items:center}
+.hero .art svg{width:420px;animation:spin 14s ease-in-out infinite;filter:drop-shadow(0 40px 50px rgba(255,255,255,.12))}
+@keyframes spin{50%{transform:rotate(-8deg) translateY(-10px)}}
+@keyframes up{from{opacity:0;transform:translateY(30px)}}
+.cats{display:flex;gap:10px;padding:10px 40px 0}
+.cats span{padding:10px 18px;border-radius:99px;border:1px solid #e5e5e5;font-size:14px;font-weight:550}
+.cats .on{background:#0a0a0a;color:#fff;border-color:#0a0a0a}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:26px 40px 60px}
+.p{border-radius:22px;cursor:pointer}
+.p .img{height:260px;border-radius:22px;background:#f2f2f2;display:grid;place-items:center;position:relative;overflow:hidden;transition:transform .4s cubic-bezier(.16,1,.3,1)}
+.p:hover .img{transform:scale(.98)}
+.p .img svg{width:62%;transition:transform .5s cubic-bezier(.16,1,.3,1)}
+.p:hover .img svg{transform:scale(1.08) rotate(-4deg)}
+.p .tagx{position:absolute;left:14px;top:14px;background:#0a0a0a;color:#fff;font-size:11px;padding:5px 10px;border-radius:99px;font-weight:600}
+.p .add{position:absolute;right:14px;bottom:14px;width:44px;height:44px;border-radius:50%;background:#0a0a0a;color:#fff;border:0;font-size:22px;cursor:pointer;transition:transform .2s}
+.p .add:active{transform:scale(.85)}
+.p h3{font-size:15px;margin:14px 4px 4px;font-weight:600}
+.p .pr{margin:0 4px;font-weight:700}.p .pr s{color:#999;font-weight:400;margin-left:6px;font-size:13px}
+.p .pr small{display:block;color:#0a7a3a;font-weight:600;font-size:12px;margin-top:2px}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:400px;background:#fff;box-shadow:-30px 0 80px -20px rgba(0,0,0,.3);transform:translateX(105%);transition:transform .5s cubic-bezier(.16,1,.3,1);z-index:20;padding:26px;display:flex;flex-direction:column;gap:14px}
+.drawer.open{transform:none}
+.drawer h2{font-size:24px;letter-spacing:-.03em}
+.item{display:flex;gap:12px;align-items:center;padding:12px;border-radius:16px;background:#f6f6f6;animation:up .5s cubic-bezier(.16,1,.3,1) both}
+.item .th{width:56px;height:56px;border-radius:12px;background:#ececec;display:grid;place-items:center}.item .th svg{width:40px}
+.item div{flex:1;font-size:14px}.item b{display:block}
+.tot{margin-top:auto;border-top:1px solid #eee;padding-top:16px;display:flex;justify-content:space-between;font-size:18px;font-weight:700}
+.pay{background:#0a0a0a;color:#fff;justify-content:center;height:56px;font-size:16px}
+.ship{font-size:13px;color:#0a7a3a;background:#ecf8f0;border-radius:12px;padding:10px 12px}
+.fly{position:fixed;width:46px;height:46px;border-radius:50%;background:#0a0a0a;z-index:30;pointer-events:none;transition:all .7s cubic-bezier(.5,-0.3,.4,1)}
+@media(max-width:860px){.grid{grid-template-columns:1fr 1fr;padding:20px}.hero{grid-template-columns:1fr;margin:14px;height:auto}.hero .art{display:none}nav ul,.search{display:none}.drawer{width:100%}}
+</style></head><body>
+<div class="bar">FRETE GRÁTIS ACIMA DE R$ 299 · 10x SEM JUROS · PIX COM 5% OFF</div>
+<nav><div class="logo">NÔMADE</div><ul><li>Novidades</li><li>Tênis</li><li>Mochilas</li><li>Acessórios</li><li>Outlet</li></ul>
+<div class="icons"><div class="search">⌕ &nbsp;Buscar produtos</div><div class="cart" id="cartBtn">🛍<b id="count">0</b></div></div></nav>
+<div class="hero"><div class="txt"><small>COLEÇÃO 2026</small><h1>Feito pra<br>andar mais.</h1><p style="opacity:.7;max-width:360px">Tênis leves, mochilas resistentes e acessórios para quem não para.</p><button class="btn">Comprar agora →</button></div>
+<div class="art"><svg viewBox="0 0 200 110"><path d="M10 70c10-2 26-8 40-22 10-10 22-14 32-8 8 5 10 14 20 18 22 8 50 6 70 14 14 6 18 18 14 24-4 6-18 6-30 6H24c-12 0-18-8-18-16 0-8 2-14 4-16z" fill="#fff"/><path d="M6 84h184" stroke="#0a0a0a" stroke-width="5"/><path d="M70 50l10 14M84 44l10 14M98 44l8 14" stroke="#0a0a0a" stroke-width="4" stroke-linecap="round"/><path d="M6 92c40 8 150 8 186 0" stroke="#fff" stroke-width="8" stroke-linecap="round" fill="none" opacity=".5"/></svg></div></div>
+<div class="cats"><span class="on">Todos</span><span>Tênis</span><span>Mochilas</span><span>Garrafas</span><span>Bonés</span></div>
+<div class="grid" id="grid"></div>
+<aside class="drawer" id="drawer"><div style="display:flex;justify-content:space-between;align-items:center"><h2>Sua sacola</h2><span id="close" style="cursor:pointer;font-size:22px">×</span></div><div class="ship">✓ Você ganhou frete grátis!</div><div id="items" style="display:grid;gap:10px"></div><div class="tot"><span>Total</span><span id="total">R$ 0,00</span></div><button class="btn pay">Finalizar compra</button></aside>
+<script>
+const shoe='<svg viewBox="0 0 200 110"><path d="M10 70c10-2 26-8 40-22 10-10 22-14 32-8 8 5 10 14 20 18 22 8 50 6 70 14 14 6 18 18 14 24-4 6-18 6-30 6H24c-12 0-18-8-18-16 0-8 2-14 4-16z" fill="COL"/><path d="M6 84h184" stroke="#fff" stroke-width="5"/><path d="M70 50l10 14M84 44l10 14M98 44l8 14" stroke="#fff" stroke-width="4" stroke-linecap="round"/></svg>';
+const bag='<svg viewBox="0 0 120 130"><rect x="20" y="30" width="80" height="94" rx="20" fill="COL"/><path d="M42 30c0-20 36-20 36 0" stroke="COL" stroke-width="8" fill="none"/><rect x="34" y="70" width="52" height="30" rx="8" fill="#fff" opacity=".25"/></svg>';
+const bottle='<svg viewBox="0 0 80 160"><rect x="22" y="40" width="36" height="112" rx="16" fill="COL"/><rect x="28" y="16" width="24" height="28" rx="6" fill="COL" opacity=".8"/><rect x="28" y="80" width="24" height="30" rx="4" fill="#fff" opacity=".3"/></svg>';
+const cap='<svg viewBox="0 0 160 100"><path d="M20 70c0-36 26-56 60-56s58 20 58 56z" fill="COL"/><path d="M10 72c40-8 100-8 146 4" stroke="COL" stroke-width="12" stroke-linecap="round" fill="none"/></svg>';
+const P=[['Tênis Trail Run X','#0a0a0a',549.9,649.9,shoe,'Novo'],['Mochila Urban 28L','#3b3b3b',389.9,0,bag,''],['Tênis Street Low','#d9d9d9',429.9,0,shoe,'-15%'],['Garrafa Térmica 1L','#111',159.9,189.9,bottle,''],['Boné Dad Hat','#555',119.9,0,cap,'Novo'],['Tênis Runner Pro','#8a8a8a',699.9,0,shoe,''],['Mochila Travel 40L','#0a0a0a',549.9,629.9,bag,'-12%'],['Garrafa Sport 750ml','#9a9a9a',99.9,0,bottle,'']];
+const brl=v=>v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+const g=document.getElementById('grid');let cart=[];
+P.forEach((p,i)=>{const d=document.createElement('div');d.className='p';d.style.animation=`up .8s ${.1+i*.06}s cubic-bezier(.16,1,.3,1) both`;
+d.innerHTML=`<div class="img">${p[5]?`<span class="tagx">${p[5]}</span>`:''}${p[4].replace(/COL/g,p[1])}<button class="add" data-i="${i}">+</button></div><h3>${p[0]}</h3><div class="pr">${brl(p[2])}${p[3]?`<s>${brl(p[3])}</s>`:''}<small>ou 10x de ${brl(p[2]/10)}</small></div>`;g.appendChild(d)});
+const dr=document.getElementById('drawer');
+function render(){document.getElementById('items').innerHTML=cart.map(i=>`<div class="item"><div class="th">${P[i][4].replace(/COL/g,P[i][1])}</div><div><b>${P[i][0]}</b>1 un.</div><b>${brl(P[i][2])}</b></div>`).join('');document.getElementById('total').textContent=brl(cart.reduce((s,i)=>s+P[i][2],0));const c=document.getElementById('count');c.textContent=cart.length;c.classList.add('bump');setTimeout(()=>c.classList.remove('bump'),300)}
+g.addEventListener('click',e=>{const b=e.target.closest('.add');if(!b)return;const r=b.getBoundingClientRect(),t=document.getElementById('cartBtn').getBoundingClientRect();const f=document.createElement('div');f.className='fly';f.style.left=r.left+'px';f.style.top=r.top+'px';document.body.appendChild(f);requestAnimationFrame(()=>{f.style.left=t.left+'px';f.style.top=t.top+'px';f.style.transform='scale(.3)'});setTimeout(()=>{f.remove();cart.push(+b.dataset.i);render()},700)});
+document.getElementById('cartBtn').onclick=()=>dr.classList.add('open');document.getElementById('close').onclick=()=>dr.classList.remove('open');
+</script></body></html>
