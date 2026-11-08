@@ -68,10 +68,10 @@ nav .autoscroll{margin-left:auto}
 @keyframes pulse{50%{opacity:.4}}
 h1{font-size:clamp(52px,9.4vw,124px);line-height:.92;letter-spacing:-.06em;font-weight:800;max-width:1050px}
 .hero p.lead{font-size:clamp(17px,2vw,21px);color:#a1a1a6;max-width:640px;margin:28px auto 36px}
-.rot{display:inline-block;position:relative;vertical-align:top;height:1.5em;overflow:hidden;text-align:left;font-weight:700}
-.rot span{position:absolute;left:0;top:0;white-space:nowrap;transform:translateY(110%);opacity:0;transition:transform .7s var(--ease),opacity .7s}
-.rot span.on{transform:none;opacity:1}
-.rot span.out{transform:translateY(-110%);opacity:0}
+.rot{display:inline-block;position:relative;vertical-align:bottom;height:1.45em;font-weight:700;transition:width .7s var(--ease)}
+.rot span{position:absolute;left:0;bottom:0;line-height:1.45em;white-space:nowrap;opacity:0;transform:translateY(.35em) scale(.96);filter:blur(8px);transition:opacity .6s var(--ease),transform .7s var(--ease),filter .6s var(--ease)}
+.rot span.on{opacity:1;transform:none;filter:none}
+.rot span.out{opacity:0;transform:translateY(-.35em) scale(.96);filter:blur(8px)}
 .hero .ctas{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
 .hero .ctas .btn{height:54px;padding:0 28px;font-size:16px}
 .scroll{margin-top:70px;width:26px;height:42px;border-radius:14px;border:1.5px solid rgba(255,255,255,.3);position:relative}
@@ -358,10 +358,11 @@ const ic={saas:'M3 4h18v7H3zM3 13h18v7H3zM7 7.5h.01M7 16.5h.01M11 7.5h6M11 16.5h
 const S=[['saas','Sistemas SaaS','Plataformas com login, planos e assinatura.'],['landing','Landing pages','Páginas rápidas que transformam visita em cliente.'],['shop','Lojas virtuais','Carrinho, Pix, cartão e frete calculado.'],['site','Sites institucionais','Presença profissional que passa confiança.'],['app','Apps mobile','Aplicativos para iPhone e Android.'],['dash','Dashboards e BI','Seus números organizados em tempo real.'],['api','APIs e integrações','Sistemas conversando entre si, sem retrabalho.'],['auto','Automações','Tarefas repetitivas rodando sozinhas.'],['ai','Chatbots com IA','Atendimento 24 h no WhatsApp e no site.'],['fix','Manutenção de código','Correções e melhorias no que você já tem.'],['seo','SEO e performance','Site rápido que aparece no Google.'],['cloud','Hospedagem e deploy','Servidor, domínio e e-mail configurados.']];
 document.getElementById('svcGrid').innerHTML=S.map(([k,t,d])=>`<div class="svc reveal"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="${ic[k]}"/></svg><h3>${t}</h3><p>${d}</p></div>`).join('');
 
-// palavra rotativa
-const rot=[...document.querySelectorAll('#rot span')];let ri=0;
-setInterval(()=>{const a=rot[ri];a.classList.remove('on');a.classList.add('out');ri=(ri+1)%rot.length;const b=rot[ri];b.classList.remove('out');b.classList.add('on');setTimeout(()=>a.classList.remove('out'),700)},2200);
-document.getElementById('rot').style.width=Math.max(...rot.map(s=>s.scrollWidth))+'px';
+// palavra rotativa: troca com desfoque e largura acompanhando a palavra
+const rotBox=document.getElementById('rot'); const rot=[...rotBox.querySelectorAll('span')]; let ri=0;
+const fit=()=>{ rotBox.style.width=Math.ceil(rot[ri].scrollWidth+2)+'px'; };
+setInterval(()=>{const a=rot[ri];a.classList.remove('on');a.classList.add('out');ri=(ri+1)%rot.length;const b=rot[ri];b.classList.remove('out');b.classList.add('on');fit();setTimeout(()=>a.classList.remove('out'),700)},2400);
+fit(); (document.fonts&&document.fonts.ready||Promise.resolve()).then(fit); addEventListener('resize',fit);
 
 // frase que acende palavra por palavra com a rolagem
 const st=document.getElementById('statement');st.innerHTML=st.textContent.split(' ').map(w=>`<span class="w">${w}</span>`).join(' ');
