@@ -1,0 +1,53 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{margin:0;box-sizing:border-box}
+body{background:#000;font-family:"SF Pro Display","Inter Display",Inter,sans-serif;color:#f5f5f7;-webkit-font-smoothing:antialiased}
+.b{position:relative;overflow:hidden;background:#000}
+.dots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.10) 1.2px,transparent 1.3px);background-size:30px 30px;mask-image:radial-gradient(70% 90% at 60% 40%,#000,transparent);-webkit-mask-image:radial-gradient(70% 90% at 60% 40%,#000,transparent)}
+.o{position:absolute;border-radius:50%;filter:blur(90px)}
+.lux{background:linear-gradient(100deg,#8a5a12 0%,#d4a537 14%,#f8e29a 26%,#fff7df 36%,#e8f7ff 46%,#a9e4ff 56%,#c7b8ff 66%,#ffd1ec 74%,#fff3c4 84%,#e3b54a 94%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.luxbg{background:linear-gradient(100deg,#d4a537,#f8e29a 25%,#fff7df 45%,#a9e4ff 65%,#c7b8ff 82%,#e3b54a)}
+.rc{font-weight:900;letter-spacing:-.13em;line-height:1}
+.chip{display:inline-flex;align-items:center;height:1.9em;padding:0 .8em;border-radius:99px;border:1.5px solid rgba(255,255,255,.18);background:rgba(255,255,255,.04);color:#d2d2d7;font-weight:600;white-space:nowrap}
+.line{position:absolute;height:2px}
+</style></head><body>
+
+<!-- Perfil 1200x480 (5:2). O avatar do Discord cobre o canto inferior esquerdo: conteúdo fica à direita. -->
+<div class="b" id="perfil" style="width:1200px;height:480px">
+  <div class="dots"></div>
+  <div class="o" style="width:520px;height:520px;left:-160px;top:-220px;background:#d4a537;opacity:.22"></div>
+  <div class="o" style="width:480px;height:480px;right:-120px;bottom:-260px;background:#8fd6ff;opacity:.2"></div>
+  <div class="o" style="width:360px;height:360px;left:520px;top:-180px;background:#b9a6ff;opacity:.12"></div>
+  <div style="position:absolute;left:96px;top:74px">
+    <svg width="230" height="150" viewBox="0 0 300 170"><defs><linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#b9862a"/><stop offset=".3" stop-color="#f8e29a"/><stop offset=".5" stop-color="#fff7df"/><stop offset=".7" stop-color="#a9e4ff"/><stop offset=".88" stop-color="#c7b8ff"/><stop offset="1" stop-color="#e3b54a"/></linearGradient></defs><circle cx="150" cy="85" r="82" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="2"/><text x="150" y="88" text-anchor="middle" dominant-baseline="central" font-family="SF Pro Display,Inter Display,Inter" font-size="118" font-weight="900" fill="url(#g1)" letter-spacing="-16">R<tspan stroke="#000" stroke-width="8" paint-order="stroke">C</tspan></text></svg>
+  </div>
+  <div style="position:absolute;right:80px;top:70px;width:720px;text-align:right">
+    <div style="font-size:20px;font-weight:700;letter-spacing:.28em;color:#86868b;text-transform:uppercase">ricco.agency</div>
+    <div style="font-size:78px;font-weight:800;letter-spacing:-.055em;line-height:.95;margin-top:16px">Sua empresa<br>no <span class="lux">automático.</span></div>
+    <div style="display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap;margin-top:28px;font-size:17px">
+      <span class="chip">Sistemas SaaS</span><span class="chip">Landing pages</span><span class="chip">Lojas virtuais</span><span class="chip">Apps</span><span class="chip">Automações</span>
+    </div>
+  </div>
+  <div style="position:absolute;right:80px;bottom:40px;display:flex;align-items:center;gap:14px;font-size:20px;font-weight:700">
+    <span style="color:#86868b;font-weight:600">acesse</span><span class="lux" style="font-size:26px;font-weight:800;letter-spacing:-.02em">ricco.agency</span>
+  </div>
+  <div class="line luxbg" style="left:0;right:0;bottom:0;opacity:.85"></div>
+</div>
+
+<div style="height:30px"></div>
+
+<!-- Servidor 960x540 -->
+<div class="b" id="servidor" style="width:960px;height:540px">
+  <div class="dots"></div>
+  <div class="o" style="width:480px;height:480px;left:-140px;top:-200px;background:#d4a537;opacity:.24"></div>
+  <div class="o" style="width:460px;height:460px;right:-140px;bottom:-200px;background:#8fd6ff;opacity:.2"></div>
+  <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center">
+    <svg width="170" height="110" viewBox="0 0 300 170"><defs><linearGradient id="g2" x1="0" x2="1"><stop offset="0" stop-color="#b9862a"/><stop offset=".3" stop-color="#f8e29a"/><stop offset=".5" stop-color="#fff7df"/><stop offset=".7" stop-color="#a9e4ff"/><stop offset=".88" stop-color="#c7b8ff"/><stop offset="1" stop-color="#e3b54a"/></linearGradient></defs><text x="150" y="88" text-anchor="middle" dominant-baseline="central" font-family="SF Pro Display,Inter Display,Inter" font-size="150" font-weight="900" fill="url(#g2)" letter-spacing="-20">R<tspan stroke="#000" stroke-width="10" paint-order="stroke">C</tspan></text></svg>
+    <div style="font-size:72px;font-weight:800;letter-spacing:-.055em;line-height:.95;margin-top:18px">Sua empresa<br>no <span class="lux">automático.</span></div>
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:28px;font-size:16px;max-width:760px">
+      <span class="chip">Sistemas SaaS</span><span class="chip">Landing pages</span><span class="chip">Lojas virtuais</span><span class="chip">Apps</span><span class="chip">Dashboards</span><span class="chip">Automações</span>
+    </div>
+    <div style="margin-top:30px;font-size:24px;font-weight:800;letter-spacing:-.02em"><span class="lux">ricco.agency</span></div>
+  </div>
+  <div class="line luxbg" style="left:0;right:0;bottom:0;opacity:.85"></div>
+</div>
+</body></html>
